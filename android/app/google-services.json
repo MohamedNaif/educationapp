@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "949908442037",
+    "project_id": "educationapp-20b49",
+    "storage_bucket": "educationapp-20b49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949908442037:android:7a36123b5e5b68fc1d27fc",
+        "android_client_info": {
+          "package_name": "com.example.educationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949908442037-g7981hs8ntu06jg9sqc4k73ud3akohqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeEA4-EbO7_ic39mD_TP29Hq4ztMXqygY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949908442037-g7981hs8ntu06jg9sqc4k73ud3akohqt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
