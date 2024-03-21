@@ -1,3 +1,4 @@
+import 'package:educationapp/features/student/presentation/screens/quiz_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart'; // Add this import statement
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
             locale: DevicePreview.locale(context),
             builder: DevicePreview.appBuilder,
             debugShowCheckedModeBanner: false,
-            home: const SplashScreen(),
+            home: const QuizScreen(),
           );
         });
   }
