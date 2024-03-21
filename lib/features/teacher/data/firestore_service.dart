@@ -4,12 +4,13 @@ class FirestoreService {
   final CollectionReference questionsCollection =
       FirebaseFirestore.instance.collection('Questions');
 
-  void addQuestion(String difficulty, String type, Map<String, dynamic> data) async {
+  Future<void> addQuestion(String difficulty, String type, String questionId, Map<String, dynamic> data) async {
     try {
       await questionsCollection
           .doc(difficulty)
           .collection(type)
-          .add(data);
+          .doc(questionId)
+          .set(data);
     } catch (e) {
       print('Error adding question: $e');
     }

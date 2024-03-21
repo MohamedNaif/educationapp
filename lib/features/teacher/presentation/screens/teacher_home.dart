@@ -43,14 +43,7 @@ class HomeTeacherScreen extends StatelessWidget {
                 ),
                 MyElevatedButton(
                   text: 'Publish New Quiz',
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const QuizScreen(),
-                      ),
-                    );
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),
@@ -59,6 +52,12 @@ class HomeTeacherScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const QuizScreen(),
+            ),
+          );
           // Action to add new question
         },
         tooltip: 'Add Question',

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-
-
 import '../../data/firestore_service.dart';
 import 'widget/custom_text_form_field_style.dart';
 import 'widget/my_bttn.dart';
-// Import your Firestore service
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({Key? key}) : super(key: key);
@@ -15,12 +12,13 @@ class QuizScreen extends StatefulWidget {
 
 class _QuizScreenState extends State<QuizScreen> {
   final FirestoreService firestoreService = FirestoreService();
-  String selectedDifficulty = 'easy'; // Default difficulty level
-  String selectedType = 'multiple_choice'; // Default question type
+  String selectedDifficulty = 'easy';
+  String selectedType = 'multiple_choice';
 
   @override
   Widget build(BuildContext context) {
     TextEditingController questionController = TextEditingController();
+    TextEditingController answerController = TextEditingController();
     TextEditingController choiceController1 = TextEditingController();
     TextEditingController choiceController2 = TextEditingController();
     TextEditingController choiceController3 = TextEditingController();
@@ -59,7 +57,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           value: value,
                           child: Text(
                             value,
-                            style: TextStyle(color: Colors.white),
+                            style: const TextStyle(color: Colors.white),
                           ),
                         );
                       }).toList(),
@@ -78,7 +76,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           value: value,
                           child: Text(
                             value,
-                            style: TextStyle(color: Colors.white),
+                            style: const TextStyle(color: Colors.white),
                           ),
                         );
                       }).toList(),
@@ -91,6 +89,10 @@ class _QuizScreenState extends State<QuizScreen> {
                     CustomTextFormField(
                       controller: questionController,
                       labelText: 'Question',
+                    ),
+                    CustomTextFormField(
+                      controller: answerController,
+                      labelText: 'Answer',
                     ),
                     if (selectedType == 'multiple_choice')
                       Column(
@@ -131,6 +133,7 @@ class _QuizScreenState extends State<QuizScreen> {
                       onPressed: () {
                         addQuestion(
                           questionController.text,
+                          answerController.text,
                           choiceController1.text,
                           choiceController2.text,
                           choiceController3.text,
@@ -151,16 +154,43 @@ class _QuizScreenState extends State<QuizScreen> {
 
   void addQuestion(
     String question,
+    String answer,
     String choice1,
     String choice2,
     String choice3,
     String choice4,
   ) {
+    String uniqueId =
+        UniqueKey().toString(); // Generate a unique ID for the question
     Map<String, dynamic> data = {
       'question': question,
+      'answer': answer,
       'choices': [choice1, choice2, choice3, choice4],
     };
 
-    firestoreService.addQuestion(selectedDifficulty, selectedType, data);
+    firestoreService
+        .addQuestion(
+      selectedDifficulty,
+      selectedType,
+      uniqueId,
+      data,
+    )
+        .then((_) {
+      // Show a success message
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Question added successfully!'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+    }).catchError((error) {
+      // Show an error message if adding the question fails
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Error adding question: $error'),
+          duration: const Duration(seconds: 2),
+        ),
+      );
+    });
   }
 }
