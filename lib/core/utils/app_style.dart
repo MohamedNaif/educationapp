@@ -1,3 +1,4 @@
+import 'package:educationapp/constants.dart';
 import 'package:flutter/material.dart';
 
 class AppStyle {
@@ -19,6 +20,13 @@ class AppStyle {
     fontSize: 20 ,
     fontWeight: FontWeight.w600 ,
     color: Colors.black,
+    fontFamily: 'Baloo2',
+
+  );
+  static const TextStyle semiBold24 = TextStyle(
+    fontSize: 24 ,
+    fontWeight: FontWeight.w600 ,
+    color: kWhiteColor,
     fontFamily: 'Baloo2',
 
   );

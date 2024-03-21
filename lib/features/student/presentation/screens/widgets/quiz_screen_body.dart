@@ -1,3 +1,4 @@
+import 'package:educationapp/features/student/presentation/screens/widgets/custom_button.dart';
 import 'package:educationapp/features/student/presentation/screens/widgets/question_body.dart';
 import 'package:educationapp/features/student/presentation/screens/widgets/quiz_header.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,8 @@ class QuizScreenBody extends StatelessWidget {
               QuizHeader(),
               Gap(70),
               QuestionBody(),
+              Gap(50),
+              CustomButton(title: 'Next')
             ],
           ),
         ),
