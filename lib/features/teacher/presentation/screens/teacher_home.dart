@@ -43,7 +43,14 @@ class HomeTeacherScreen extends StatelessWidget {
                 ),
                 MyElevatedButton(
                   text: 'Publish New Quiz',
-                  onPressed: () {},
+                  onPressed: () {
+                     Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => QuizSelectionScreen(),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
