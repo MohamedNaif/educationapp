@@ -6,15 +6,15 @@ import 'package:flutter/material.dart';
 
 class SelectedAnswerItem extends StatelessWidget {
   const SelectedAnswerItem({
-    super.key,
+    super.key, required this.answerText,
   });
-
+  final String answerText ;
   @override
   Widget build(BuildContext context) {
     return  CustomContainerDecoration(
       backgroundColor: const Color(0xFFABD1C6),
       child: ListTile(
-        title: Text('2002', style: AppStyle.semiBold20.copyWith(color: const Color(0xFF407A74))),
+        title: Text(answerText, style: AppStyle.semiBold20.copyWith(color: const Color(0xFF407A74))),
         trailing: const CustomRadio(correctChoice: true),
       ),
     );

@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 
 class NonSelectedAnswerItem extends StatelessWidget {
   const NonSelectedAnswerItem({
-    super.key,
+    super.key, required this.answerText,
   });
-
+  final String answerText ;
   @override
   Widget build(BuildContext context) {
     return const CustomContainerDecoration(
