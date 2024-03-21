@@ -31,7 +31,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
                   "assets/quiz-seamless-pattern-in-doodle-style-illustration-back-to-school-concept-stationery-symbols-on-a-white-background-pattern-hand-drawn-for-print-and-game-quiz-vector.jpg"),
@@ -47,7 +47,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Container(
                   height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
-                  color: Color.fromARGB(172, 7, 27, 44),
+                  color: const Color.fromARGB(172, 7, 27, 44),
                   child: Align(
                     alignment: Alignment.topCenter,
                     child: Padding(
@@ -99,7 +99,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         MyTextFormField(
                           icons: IconButton(
                             onPressed: () {},
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.person,
                               color: Color.fromARGB(255, 64, 248, 255),
                             ),
@@ -117,7 +117,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         MyTextFormField(
                           icons: IconButton(
                             onPressed: () {},
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.email,
                               color: Color.fromARGB(255, 64, 248, 255),
                             ),
@@ -135,7 +135,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         MyTextFormField(
                           icons: IconButton(
                             onPressed: () {},
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.key,
                               color: Color.fromARGB(255, 64, 248, 255),
                             ),
@@ -193,7 +193,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               }
                             }
                           },
-                          buttonColor: Color.fromARGB(255, 64, 248, 255),
+                          buttonColor: const Color.fromARGB(255, 64, 248, 255),
                           buttonText: "Sign Up",
                           fontFamily: "Lato",
                           fontSize: 24.sp,
@@ -218,7 +218,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 "Login",
                                 style: TextStyle(
                                   fontSize: 16.sp,
-                                  color: Color.fromARGB(255, 64, 248, 255),
+                                  color: const Color.fromARGB(255, 64, 248, 255),
                                 ),
                               ),
                             ),

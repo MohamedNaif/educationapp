@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../auth/finger_print_screen.dart';
+import 'finger_print_screen.dart';
 
 class UserTypeSelectionScreen extends StatelessWidget {
   @override

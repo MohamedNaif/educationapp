@@ -1,9 +1,9 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:educationapp/auth/login_screen.dart';
+import 'package:educationapp/features/auth/presentation/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
 
-import '../screens/user_type.dart';
+import 'user_type.dart';
 
 // Import your home screen file
 

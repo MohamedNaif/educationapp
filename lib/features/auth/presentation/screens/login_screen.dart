@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 
-import '../screens/user_type.dart';
+import 'user_type.dart';
 import 'register_screen.dart';
 import 'widget/google_container.dart';
 import 'widget/text_button.dart';
