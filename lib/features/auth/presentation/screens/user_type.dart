@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'finger_print_screen.dart';
 
 class UserTypeSelectionScreen extends StatelessWidget {
+  const UserTypeSelectionScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +20,7 @@ class UserTypeSelectionScreen extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              color: Color.fromARGB(108, 0, 0, 0),
+              color: const Color.fromARGB(108, 0, 0, 0),
             ),
             Center(
               child: Card(
@@ -45,7 +47,7 @@ class UserTypeSelectionScreen extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          FingerPrint()));
+                                          const FingerPrint()));
                               // Handle student button press
                               // You can navigate to the student registration screen here
                             },
@@ -63,7 +65,7 @@ class UserTypeSelectionScreen extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          FingerPrint()));
+                                          const FingerPrint()));
                               // Handle teacher button press
                               // You can navigate to the teacher registration screen here
                             },

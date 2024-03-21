@@ -1,3 +1,4 @@
+import 'package:educationapp/features/student/presentation/screens/quiz_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -33,7 +34,8 @@ class _SplashScreenState extends State<SplashScreen>
                     //             FirebaseAuth.instance.currentUser?.emailVerified ==
                     //                 null)
                     //     ?
-                    UserTypeSelectionScreen()
+                    // UserTypeSelectionScreen()
+                    const QuizScreen()
                 // : HomeScreen()
 
                 ));
