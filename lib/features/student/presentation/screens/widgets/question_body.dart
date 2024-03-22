@@ -1,4 +1,4 @@
-import 'package:educationapp/features/student/data/question_model.dart';
+import 'package:educationapp/features/student/data/models/question_model.dart';
 import 'package:educationapp/features/student/presentation/manager/quiz_body_cubit/quiz_body_cubit.dart';
 import 'package:educationapp/features/student/presentation/screens/widgets/answer_list.dart';
 import 'package:educationapp/features/student/presentation/screens/widgets/custom_button.dart';
