@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+
 import 'quiz_selection.dart';
+
 import 'select_question.dart';
 import 'widget/my_bttn.dart';
 
@@ -47,7 +49,7 @@ class HomeTeacherScreen extends StatelessWidget {
                      Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => QuizSelectionScreen(),
+                        builder: (context) =>  QuizSelectionScreen(),
                       ),
                     );
                   },

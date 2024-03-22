@@ -11,7 +11,7 @@ final TextEditingController emailController = TextEditingController();
 final TextEditingController userName = TextEditingController();
 
 class RegisterScreen extends StatefulWidget {
-  RegisterScreen({Key? key});
+  const RegisterScreen({super.key});
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();

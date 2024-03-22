@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 
+import '../../../../student/presentation/screens/quiz_screen.dart';
 import '../../../../teacher/presentation/screens/teacher_home.dart';
 import '../finger_print_screen.dart';
 
@@ -38,7 +39,7 @@ class UserCard extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  FingerPrint()));
+                                  const QuizScreen()));
                       // Handle student button press
                       // You can navigate to the student registration screen here
                     },
