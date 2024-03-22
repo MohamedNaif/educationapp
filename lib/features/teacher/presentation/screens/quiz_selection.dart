@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import 'widget/build_questions_list.dart';
+import 'widget/my_bttn.dart';
+
 class QuizSelectionScreen extends StatefulWidget {
-  const QuizSelectionScreen({super.key});
+  const QuizSelectionScreen({Key? key}) : super(key: key);
 
   @override
   _QuizSelectionScreenState createState() => _QuizSelectionScreenState();
@@ -11,6 +14,14 @@ class QuizSelectionScreen extends StatefulWidget {
 class _QuizSelectionScreenState extends State<QuizSelectionScreen> {
   String selectedDifficulty = 'easy';
   String selectedType = 'multiple_choice';
+
+  void addQuestionToFirestore(String question) {
+    FirebaseFirestore.instance.collection('SelectedQuestions').add({
+      'question': question,
+      'difficulty': selectedDifficulty,
+      'type': selectedType
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -116,9 +127,24 @@ class _QuizSelectionScreenState extends State<QuizSelectionScreen> {
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                                '$selectedDifficulty $selectedType Questions:'),
-                            buildQuestionsList(questions),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Text(
+                                  '$selectedDifficulty $selectedType Questions:',
+                                  style: const TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
+                            BuildQuestionsList(questions: questions),
+                            const SizedBox(
+                              height: 50,
+                            ),
+                            Center(
+                                child: MyElevatedButton(
+                              text: 'Add Question',
+                              onPressed: () {},
+                            )),
                           ],
                         );
                       },
@@ -130,27 +156,6 @@ class _QuizSelectionScreenState extends State<QuizSelectionScreen> {
           ],
         ),
       ),
-    );
-  }
-
-  Widget buildQuestionsList(List<QueryDocumentSnapshot> questions) {
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      itemCount: questions.length,
-      itemBuilder: (context, index) {
-        final questionData = questions[index].data()
-            as Map<String, dynamic>; // Explicit cast to Map<String, dynamic>
-        final questionText = questionData['question']
-            as String?; // Null check using 'as String?'
-        return ListTile(
-          title: Text(
-            questionText ?? '',
-            style: const TextStyle(color: Colors.white),
-          ),
-          // Add more widgets to display question details as needed
-        );
-      },
     );
   }
 }
