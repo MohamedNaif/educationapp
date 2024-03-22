@@ -11,10 +11,10 @@ class NonSelectedAnswerItem extends StatelessWidget {
   final String answerText ;
   @override
   Widget build(BuildContext context) {
-    return const CustomContainerDecoration(
+    return  CustomContainerDecoration(
       child: ListTile(
-        title: Text('2002', style: AppStyle.semiBold20),
-        trailing: CustomRadio(correctChoice: false),
+        title: Text(answerText, style: AppStyle.semiBold20),
+        trailing: const CustomRadio(correctChoice: false),
       ),
     );
   }

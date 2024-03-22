@@ -1,9 +1,11 @@
 import 'package:educationapp/features/student/data/question_model.dart';
+import 'package:educationapp/features/student/presentation/manager/quiz_body_cubit/quiz_body_cubit.dart';
 import 'package:educationapp/features/student/presentation/screens/widgets/answer_list.dart';
 import 'package:educationapp/features/student/presentation/screens/widgets/custom_button.dart';
 import 'package:educationapp/features/student/presentation/screens/widgets/question_Text.dart';
 import 'package:educationapp/features/student/presentation/screens/widgets/quiz_header.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 
 class QuestionBody extends StatelessWidget {
@@ -11,6 +13,8 @@ class QuestionBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int questionIndex = BlocProvider.of<QuizBodyCubit>(context).numOfQuestion ;
+    QuestionModel questionModel = BlocProvider.of<QuizBodyCubit>(context).questionModel[questionIndex] ;
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -30,10 +34,10 @@ class QuestionBody extends StatelessWidget {
     );
   }
 
-  static const QuestionModel questionModel = QuestionModel(
-    question:
-        'In what year did the United States host the FIFA World Cup for the first time?',
-    answers: ['1986', '1994', '2002', '2010'],
-    correctAnswerIndex: 1,
-  );
+  // static const QuestionModel questionModel = QuestionModel(
+  //   question:
+  //       'In what year did the United States host the FIFA World Cup for the first time?',
+  //   answers: ['1986', '1994', '2002', '2010'],
+  //   correctAnswerIndex: 1,
+  // );
 }
