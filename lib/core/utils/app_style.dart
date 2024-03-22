@@ -21,7 +21,7 @@ class AppStyle {
     fontWeight: FontWeight.w600 ,
     color: Colors.black,
     fontFamily: 'Baloo2',
-
+  
   );
   static const TextStyle semiBold24 = TextStyle(
     fontSize: 24 ,
