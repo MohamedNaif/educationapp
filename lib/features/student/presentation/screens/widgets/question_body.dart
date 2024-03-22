@@ -15,13 +15,13 @@ class QuestionBody extends StatelessWidget {
   Widget build(BuildContext context) {
     QuizBodyCubit blocProvider = BlocProvider.of<QuizBodyCubit>(context);
     int questionIndex = blocProvider.questionIndex;
-    QuestionModel questionModel = blocProvider.questionModel[questionIndex];
+    QuestionModel questionModel = blocProvider.questionModelList[questionIndex];
     return SingleChildScrollView(
       child: Column(
         children: [
           const Gap(50),
           // ignore: prefer_const_constructors
-          QuizHeader(),  // don't make it const because its body will be change
+          QuizHeader(), // don't make it const because bec it should rebuild
           const Gap(70),
           QuestionText(question: questionModel.question),
           const Gap(40),
@@ -30,9 +30,8 @@ class QuestionBody extends StatelessWidget {
             correctAnswerIndex: questionModel.correctAnswerIndex,
           ),
           const Gap(50),
-          const CustomButton(
-            
-          )
+          // ignore: prefer_const_constructors
+          CustomButton()  // don't make it const because bec it should rebuild
         ],
       ),
     );

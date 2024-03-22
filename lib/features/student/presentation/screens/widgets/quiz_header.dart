@@ -11,7 +11,7 @@ class QuizHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     QuizBodyCubit blocProvider = BlocProvider.of<QuizBodyCubit>(context);
     int questionIndex = blocProvider.questionIndex;
-    int totalQuestionNum = blocProvider.questionModel.length;
+    int totalQuestionNum = blocProvider.questionModelList.length;
     return  Row(
       mainAxisSize: MainAxisSize.max,
       children: [

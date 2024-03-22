@@ -15,20 +15,34 @@ class AnswerListWidget extends StatefulWidget {
 }
 
 class _AnswerListWidgetState extends State<AnswerListWidget> {
-  int selectedAnswerIndex = -1;
-  int currQuestionIndex = 0 ;
-  void check(){
-    QuizBodyCubit blocProvider = BlocProvider.of<QuizBodyCubit>(context) ;
-    if ( currQuestionIndex != blocProvider.questionIndex){
-      setState(() {
-        selectedAnswerIndex = -1 ;
-        currQuestionIndex = blocProvider.questionIndex ;
-      });
-    }
+  late int selectedAnswerIndex, currQuestionIndex;
+  late QuizBodyCubit blocProvider;
+  @override
+  void initState() {
+    blocProvider = BlocProvider.of<QuizBodyCubit>(context);
+    currQuestionIndex = blocProvider.questionIndex;
+    selectedAnswerIndex = blocProvider
+        .selectedWrongOrRightAnswer[currQuestionIndex]['selectedAnswerIndex']!;
+    super.initState();
   }
+
+  void check() {
+    setState(() {
+      currQuestionIndex = blocProvider.questionIndex;
+      selectedAnswerIndex =
+          blocProvider.selectedWrongOrRightAnswer[currQuestionIndex]
+              ['selectedAnswerIndex']!;
+    });
+    // print('currQuestionIndex = $currQuestionIndex');
+    // print('selectedAnswerIndex =$selectedAnswerIndex') ;
+    // print(blocProvider.selectedWrongOrRightAnswer[currQuestionIndex]['selectedAnswerIndex']!);
+    print(blocProvider.selectedWrongOrRightAnswer);
+  }
+
   @override
   Widget build(BuildContext context) {
-    check() ;
+    check();
+    print('check') ;
     return Column(
       children: widget.answerList.asMap().entries.map((e) {
         int index = e.key;
@@ -40,7 +54,13 @@ class _AnswerListWidgetState extends State<AnswerListWidget> {
               if (index != selectedAnswerIndex) {
                 setState(() {
                   selectedAnswerIndex = index;
+                  print('currQuestionIndex = $currQuestionIndex') ;
+                  blocProvider.selectedWrongOrRightAnswer[currQuestionIndex]
+                      ['selectedAnswerIndex'] = index;
+                  blocProvider.selectedWrongOrRightAnswer[currQuestionIndex]
+                      ['score'] = widget.correctAnswerIndex == index ? 1 : 0;
                 });
+                // test() ;
               }
             },
             child: index == selectedAnswerIndex
@@ -51,4 +71,17 @@ class _AnswerListWidgetState extends State<AnswerListWidget> {
       }).toList(),
     );
   }
+  // void test(){
+  //   List<Map<String, int>> selectedWrongOrRightAnswer = List.generate(
+  //   5,
+  //   (index) => {
+  //     'selectedAnswerIndex': -1,
+  //     'score': 0,
+  //   },
+  // );
+
+  // selectedWrongOrRightAnswer[1]['score'] = 10;
+
+  // print(selectedWrongOrRightAnswer);
+  // }
 }
