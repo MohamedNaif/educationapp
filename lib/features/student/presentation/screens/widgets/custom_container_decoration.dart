@@ -12,6 +12,7 @@ class CustomContainerDecoration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       decoration: ShapeDecoration(
         color: backgroundColor ?? kWhiteColor,
         shape: RoundedRectangleBorder(

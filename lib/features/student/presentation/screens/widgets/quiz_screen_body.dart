@@ -18,7 +18,8 @@ class QuizScreenBody extends StatelessWidget {
           child: BlocBuilder<QuizBodyCubit, QuizBodyState>(
             builder: (context, state) {
               if (state is QuizBodySuccess) {
-                return const QuestionBody();
+                // ignore: prefer_const_constructors
+                return  QuestionBody();
               } else if (state is QuizBodyLoading) {
                 return const CustomCircularIndicator();
               } else {

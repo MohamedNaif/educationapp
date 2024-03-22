@@ -7,7 +7,7 @@ class QuizBodyCubit extends Cubit<QuizBodyState> {
   QuizBodyCubit() : super(QuizBodyInitial()){
     fetchQuestions() ;
   }
-  int numOfQuestion = 0;
+  int questionIndex = 0;
   late List<QuestionModel> questionModel;
   void fetchQuestions() {
     emit(QuizBodyLoading());
@@ -33,5 +33,17 @@ class QuizBodyCubit extends Cubit<QuizBodyState> {
 
     ];
     emit(QuizBodySuccess()) ;
+  }
+  void nextQuestion(){
+    if ( questionIndex != questionModel.length - 1){
+        questionIndex++ ;
+        emit(QuizBodySuccess()) ;
+    }
+  }
+  void previosQuestion(){
+    if ( questionIndex != 0){
+        questionIndex-- ;
+        emit(QuizBodySuccess()) ;
+    }
   }
 }

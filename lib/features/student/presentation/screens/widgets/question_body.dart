@@ -13,8 +13,9 @@ class QuestionBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int questionIndex = BlocProvider.of<QuizBodyCubit>(context).numOfQuestion ;
-    QuestionModel questionModel = BlocProvider.of<QuizBodyCubit>(context).questionModel[questionIndex] ;
+    QuizBodyCubit blocProvider = BlocProvider.of<QuizBodyCubit>(context);
+    int questionIndex = blocProvider.questionIndex;
+    QuestionModel questionModel = blocProvider.questionModel[questionIndex];
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -28,7 +29,9 @@ class QuestionBody extends StatelessWidget {
             correctAnswerIndex: questionModel.correctAnswerIndex,
           ),
           const Gap(50),
-          const CustomButton(title: 'Next')
+          CustomButton(
+            
+          )
         ],
       ),
     );
