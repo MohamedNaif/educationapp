@@ -15,7 +15,7 @@ class QuestionBody extends StatelessWidget {
   Widget build(BuildContext context) {
     QuizBodyCubit blocProvider = BlocProvider.of<QuizBodyCubit>(context);
     int questionIndex = blocProvider.questionIndex;
-    QuestionModel questionModel = blocProvider.questionModel[questionIndex];
+    QuestionModel questionModel = blocProvider.questionModelList[questionIndex];
     return SingleChildScrollView(
       child: Column(
         children: [
