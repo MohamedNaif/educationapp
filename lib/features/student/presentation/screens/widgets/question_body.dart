@@ -1,6 +1,8 @@
 import 'package:educationapp/features/student/data/question_model.dart';
 import 'package:educationapp/features/student/presentation/screens/widgets/answer_list.dart';
+import 'package:educationapp/features/student/presentation/screens/widgets/custom_button.dart';
 import 'package:educationapp/features/student/presentation/screens/widgets/question_Text.dart';
+import 'package:educationapp/features/student/presentation/screens/widgets/quiz_header.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -9,15 +11,22 @@ class QuestionBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        QuestionText(question: questionModel.question),
-        const Gap(40),
-        AnswerListWidget(
-          answerList: questionModel.answers,
-          correctAnswerIndex: questionModel.correctAnswerIndex,
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const Gap(50),
+          const QuizHeader(),
+          const Gap(70),
+          QuestionText(question: questionModel.question),
+          const Gap(40),
+          AnswerListWidget(
+            answerList: questionModel.answers,
+            correctAnswerIndex: questionModel.correctAnswerIndex,
+          ),
+          const Gap(50),
+          const CustomButton(title: 'Next')
+        ],
+      ),
     );
   }
 
