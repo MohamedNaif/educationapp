@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen>
                     //                 null)
                     //     ?
                     // UserTypeSelectionScreen()
-                    const QuizScreen()
+                    const UserTypeSelectionScreen()
                 // : HomeScreen()
 
                 ));
