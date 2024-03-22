@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../../../student/presentation/screens/quiz_screen.dart';
 import '../../../../teacher/presentation/screens/teacher_home.dart';
 import '../finger_print_screen.dart';
+import '../login_screen.dart';
 
 class UserCard extends StatelessWidget {
   const UserCard({
@@ -57,7 +58,7 @@ class UserCard extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  const HomeTeacherScreen()));
+                                  const LoginScreen()));
                       // Handle teacher button press
                       // You can navigate to the teacher registration screen here
                     },

@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 
+import '../../../teacher/presentation/screens/teacher_home.dart';
 import 'user_type.dart';
 import 'register_screen.dart';
 import 'widget/google_container.dart';
@@ -49,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => UserTypeSelectionScreen(),
+          builder: (context) => const HomeTeacherScreen(),
         ),
       );
     } catch (e) {
@@ -60,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(0, 3, 10, 16),
+      backgroundColor: const Color.fromARGB(0, 3, 10, 16),
       body: SingleChildScrollView(
         child: Container(
           height: MediaQuery.of(context).size.height,
@@ -110,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     MyTextFormField(
                       icons: IconButton(
                           onPressed: () {},
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.email,
                             color: Color.fromARGB(255, 64, 248, 255),
                           )),
@@ -128,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     MyTextFormField(
                       icons: IconButton(
                           onPressed: () {},
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.key,
                             color: Color.fromARGB(255, 64, 248, 255),
                           )),
@@ -162,7 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      UserTypeSelectionScreen(),
+                                      const HomeTeacherScreen(),
                                 ),
                               );
                             } else {
@@ -183,7 +184,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           }
                         }
                       },
-                      buttonColor: Color.fromARGB(255, 64, 248, 255),
+                      buttonColor: const Color.fromARGB(255, 64, 248, 255),
                       buttonText: "LOGIN",
                       fontFamily: "Lato",
                       fontSize: 24.sp,
@@ -201,27 +202,27 @@ class _LoginScreenState extends State<LoginScreen> {
                           onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => RegisterScreen(),
+                              builder: (context) => const RegisterScreen(),
                             ),
                           ),
                           child: Text(
                             "Register",
                             style: TextStyle(
                               fontSize: 16.sp,
-                              color: Color.fromARGB(255, 64, 248, 255),
+                              color: const Color.fromARGB(255, 64, 248, 255),
                             ),
                           ),
                         ),
                       ],
                     ),
                     const SizedBox(height: 16.0), // Added space
-                    SizedBox(width: 8.0),
-                    SizedBox(height: 10),
+                    const SizedBox(width: 8.0),
+                    const SizedBox(height: 10),
                     InkWell(
                       onTap: () {
                         signInWithGoogle();
                       },
-                      child: googleContainer(),
+                      child: const GoogleContainer(),
                     ),
                   ],
                 ),

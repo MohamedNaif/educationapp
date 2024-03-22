@@ -43,44 +43,51 @@ class _QuizScreenState extends State<QuizScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    DropdownButton<String>(
-                      dropdownColor: Colors.black,
-                      value: selectedDifficulty,
-                      onChanged: (newValue) {
-                        setState(() {
-                          selectedDifficulty = newValue!;
-                        });
-                      },
-                      items: <String>['easy', 'hard', 'medium']
-                          .map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(
-                            value,
-                            style: const TextStyle(color: Colors.white),
-                          ),
-                        );
-                      }).toList(),
+                    const SizedBox(
+                      height: 30,
                     ),
-                    DropdownButton<String>(
-                      dropdownColor: Colors.black,
-                      value: selectedType,
-                      onChanged: (newValue) {
-                        setState(() {
-                          selectedType = newValue!;
-                        });
-                      },
-                      items: <String>['multiple_choice', 'true_false']
-                          .map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(
-                            value,
-                            style: const TextStyle(color: Colors.white),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          DropdownButton<String>(
+                            dropdownColor: Colors.black,
+                            value: selectedDifficulty,
+                            onChanged: (newValue) {
+                              setState(() {
+                                selectedDifficulty = newValue!;
+                              });
+                            },
+                            items: <String>['easy', 'hard', 'medium']
+                                .map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(
+                                  value,
+                                  style: const TextStyle(color: Colors.white),
+                                ),
+                              );
+                            }).toList(),
                           ),
-                        );
-                      }).toList(),
-                    ),
+                          DropdownButton<String>(
+                            dropdownColor: Colors.black,
+                            value: selectedType,
+                            onChanged: (newValue) {
+                              setState(() {
+                                selectedType = newValue!;
+                              });
+                            },
+                            items: <String>['multiple_choice', 'true_false']
+                                .map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(
+                                  value,
+                                  style: const TextStyle(color: Colors.white),
+                                ),
+                              );
+                            }).toList(),
+                          ),
+                        ]),
                     const SizedBox(height: 20),
                     const Text(
                       'Add Question and Choices:',

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class googleContainer extends StatelessWidget {
-  const googleContainer({super.key});
+class GoogleContainer extends StatelessWidget {
+  const GoogleContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Center(
+        const Center(
             child: Text(
           "Or Login With  ",
           style: TextStyle(color: Colors.white),
         )),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         Container(
@@ -21,7 +21,7 @@ class googleContainer extends StatelessWidget {
           padding: const EdgeInsets.all(4),
           margin: const EdgeInsets.all(4),
           decoration: BoxDecoration(
-              color: Color.fromARGB(20, 255, 255, 255),
+              color: const Color.fromARGB(20, 255, 255, 255),
               borderRadius: BorderRadius.circular(10)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

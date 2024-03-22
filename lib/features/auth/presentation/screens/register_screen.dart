@@ -173,7 +173,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => LoginScreen(),
+                                    builder: (context) => const LoginScreen(),
                                   ),
                                 );
                               } on FirebaseAuthException catch (e) {
@@ -211,7 +211,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               onTap: () => Navigator.pop(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => LoginScreen(),
+                                  builder: (context) => const LoginScreen(),
                                 ),
                               ),
                               child: Text(

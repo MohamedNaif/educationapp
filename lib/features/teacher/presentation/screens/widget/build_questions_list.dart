@@ -1,15 +1,15 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class BuildQuestionsList extends StatefulWidget {
   const BuildQuestionsList({
     Key? key,
     required this.questions,
-    // required this.onQuestionsSelected,
+    required this.onAddSelectedQuestionsToFirestore,
   }) : super(key: key);
 
   final List<QueryDocumentSnapshot<Object?>> questions;
-  // final void Function(List<String>) onQuestionsSelected;
+  final VoidCallback onAddSelectedQuestionsToFirestore;
 
   @override
   _BuildQuestionsListState createState() => _BuildQuestionsListState();
@@ -17,6 +17,27 @@ class BuildQuestionsList extends StatefulWidget {
 
 class _BuildQuestionsListState extends State<BuildQuestionsList> {
   List<String> selectedQuestions = [];
+
+  void addSelectedQuestionsToFirestore() async {
+    if (selectedQuestions.isNotEmpty) {
+      final batch = FirebaseFirestore.instance.batch();
+      for (final question in selectedQuestions) {
+        final docRef =
+            FirebaseFirestore.instance.collection('Questions').doc(question);
+        batch.set(docRef, {
+          'question': question,
+          // Add other fields like choices, answer, etc. as needed
+        });
+      }
+      await batch.commit();
+      setState(() {
+        selectedQuestions.clear();
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Selected questions added to Firestore')),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +52,7 @@ class _BuildQuestionsListState extends State<BuildQuestionsList> {
             as String?; // Null check using 'as String?'
         final answerText = questionData['answer']
             as String?; // Assuming 'answer' is a field in your Firestore document
-        final choicesArray = questionData['choices']
-            as List<dynamic>?; // Assuming 'choices' is an array in your Firestore document
+        final choicesArray = questionData['choices'] as List<dynamic>?;
 
         return ListTile(
           title: Column(
@@ -65,8 +85,6 @@ class _BuildQuestionsListState extends State<BuildQuestionsList> {
                 } else {
                   selectedQuestions.remove(questionText);
                 }
-                // Call the callback function with selected questions
-                // widget.onQuestionsSelected(selectedQuestions);
               });
             },
           ),

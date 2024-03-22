@@ -119,7 +119,7 @@ class _QuizSelectionScreenState extends State<QuizSelectionScreen> {
 
                         if (snapshot.connectionState ==
                             ConnectionState.waiting) {
-                          return Center(child: CircularProgressIndicator());
+                          return const Center(child: CircularProgressIndicator());
                         }
 
                         final questions = snapshot.data!.docs;
@@ -136,14 +136,16 @@ class _QuizSelectionScreenState extends State<QuizSelectionScreen> {
                                 ),
                               ),
                             ),
-                            BuildQuestionsList(questions: questions),
+                            BuildQuestionsList(questions: questions, onAddSelectedQuestionsToFirestore: () {  },),
                             const SizedBox(
                               height: 50,
                             ),
                             Center(
                                 child: MyElevatedButton(
                               text: 'Add Question',
-                              onPressed: () {},
+                              onPressed: () {
+                                
+                              },
                             )),
                           ],
                         );
