@@ -20,7 +20,8 @@ class QuestionBody extends StatelessWidget {
       child: Column(
         children: [
           const Gap(50),
-          const QuizHeader(),
+          // ignore: prefer_const_constructors
+          QuizHeader(),  // don't make it const because its body will be change
           const Gap(70),
           QuestionText(question: questionModel.question),
           const Gap(40),
@@ -29,7 +30,7 @@ class QuestionBody extends StatelessWidget {
             correctAnswerIndex: questionModel.correctAnswerIndex,
           ),
           const Gap(50),
-          CustomButton(
+          const CustomButton(
             
           )
         ],

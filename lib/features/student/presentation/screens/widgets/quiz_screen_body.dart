@@ -19,7 +19,7 @@ class QuizScreenBody extends StatelessWidget {
             builder: (context, state) {
               if (state is QuizBodySuccess) {
                 // ignore: prefer_const_constructors
-                return  QuestionBody();
+                return  QuestionBody(); // don't make it const because its body will be changed
               } else if (state is QuizBodyLoading) {
                 return const CustomCircularIndicator();
               } else {
