@@ -6,7 +6,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 
 import '../../../teacher/presentation/screens/teacher_home.dart';
-import 'user_type.dart';
 import 'register_screen.dart';
 import 'widget/google_container.dart';
 import 'widget/text_button.dart';

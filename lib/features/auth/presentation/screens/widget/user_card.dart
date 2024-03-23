@@ -1,11 +1,6 @@
-
-
-
+import 'package:educationapp/features/student/presentation/screens/quizzes_list_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../student/presentation/screens/quiz_screen.dart';
-import '../../../../teacher/presentation/screens/teacher_home.dart';
-import '../finger_print_screen.dart';
 import '../login_screen.dart';
 
 class UserCard extends StatelessWidget {
@@ -19,8 +14,7 @@ class UserCard extends StatelessWidget {
       child: Card(
         margin: const EdgeInsets.all(16), // Add margin to the card
         child: Padding(
-          padding: const EdgeInsets.all(
-              16), // Add padding to the card content
+          padding: const EdgeInsets.all(16), // Add padding to the card content
           child: Column(
             mainAxisSize: MainAxisSize.min, // Set main axis size to min
             children: <Widget>[
@@ -39,8 +33,7 @@ class UserCard extends StatelessWidget {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  const QuizScreen()));
+                              builder: (context) => const QuizzesListScreen()));
                       // Handle student button press
                       // You can navigate to the student registration screen here
                     },
@@ -57,8 +50,7 @@ class UserCard extends StatelessWidget {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  const LoginScreen()));
+                              builder: (context) => const LoginScreen()));
                       // Handle teacher button press
                       // You can navigate to the teacher registration screen here
                     },
