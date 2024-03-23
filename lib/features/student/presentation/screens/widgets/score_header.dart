@@ -14,6 +14,7 @@ class ScoreHeader extends StatelessWidget {
           child: Align(
             alignment: Alignment.centerLeft,
             child: GestureDetector(
+              onTap: () => Navigator.pop(context),
               child: const Icon(Icons.arrow_back_ios, color: Colors.white),
             ),
           ),
