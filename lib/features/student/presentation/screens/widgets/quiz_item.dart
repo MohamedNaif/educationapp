@@ -10,7 +10,7 @@ class QuizItem extends StatelessWidget {
     return CustomContainerDecoration(
       child: ListTile(
         title: Text(quizName, style: AppStyle.semiBold20),
-        trailing: Text(deadline, style: AppStyle.semiBold20),
+        trailing: Text(deadline, style: AppStyle.semiBold12),
       ),
     );
   }

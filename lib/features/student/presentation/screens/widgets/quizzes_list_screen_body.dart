@@ -1,5 +1,5 @@
+import 'package:educationapp/features/student/presentation/screens/widgets/quizzes_item_list.dart';
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
 class QuizzesListScreenBody extends StatelessWidget {
   const QuizzesListScreenBody({super.key});
@@ -7,13 +7,8 @@ class QuizzesListScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        children: [
-          Gap(50),
-          
-        ],
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16 , vertical: 20),
+      child: QuizzesItemList(),
     );
   }
 }
