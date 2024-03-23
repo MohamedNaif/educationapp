@@ -3,12 +3,11 @@ import 'package:educationapp/features/auth/presentation/screens/login_screen.dar
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
 
-import 'user_type.dart';
 
 // Import your home screen file
 
 class FingerPrint extends StatefulWidget {
-  const FingerPrint({Key? key});
+  const FingerPrint({super.key});
 
   @override
   State<FingerPrint> createState() => _FingerPrintState();

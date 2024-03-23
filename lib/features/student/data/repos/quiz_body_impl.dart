@@ -12,13 +12,23 @@ class QuizBodyRepoImpl implements QuizBodyRepo {
         correctAnswerIndex: 1,
       ),
       const QuestionModel(
-        question: 'Do you love mohamed naif',
-        answers: ['no', 'no', 'no', 'no'],
+        question: 'Which planet is known as the "Red Planet"?',
+        answers: [
+          'Venus',
+          'Mars',
+          'Jupiter',
+          'Saturn',
+        ],
         correctAnswerIndex: 1,
       ),
       const QuestionModel(
-        question: 'Do you love ahmed nasser',
-        answers: ['yes', 'yes', 'yes', 'yes'],
+        question: 'Who wrote the famous play "Romeo and Juliet"?',
+        answers: [
+          'William Shakespeare',
+          'Charles Dickens',
+          'Jane Austen',
+          'Mark Twain',
+        ],
         correctAnswerIndex: 1,
       ),
     ];

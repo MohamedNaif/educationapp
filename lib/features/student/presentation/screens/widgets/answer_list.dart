@@ -33,16 +33,12 @@ class _AnswerListWidgetState extends State<AnswerListWidget> {
           blocProvider.selectedWrongOrRightAnswer[currQuestionIndex]
               ['selectedAnswerIndex']!;
     });
-    // print('currQuestionIndex = $currQuestionIndex');
-    // print('selectedAnswerIndex =$selectedAnswerIndex') ;
-    // print(blocProvider.selectedWrongOrRightAnswer[currQuestionIndex]['selectedAnswerIndex']!);
-    print(blocProvider.selectedWrongOrRightAnswer);
+    
   }
 
   @override
   Widget build(BuildContext context) {
     check();
-    print('check') ;
     return Column(
       children: widget.answerList.asMap().entries.map((e) {
         int index = e.key;
@@ -54,7 +50,6 @@ class _AnswerListWidgetState extends State<AnswerListWidget> {
               if (index != selectedAnswerIndex) {
                 setState(() {
                   selectedAnswerIndex = index;
-                  print('currQuestionIndex = $currQuestionIndex') ;
                   blocProvider.selectedWrongOrRightAnswer[currQuestionIndex]
                       ['selectedAnswerIndex'] = index;
                   blocProvider.selectedWrongOrRightAnswer[currQuestionIndex]

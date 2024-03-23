@@ -1,9 +1,5 @@
-import 'package:educationapp/features/student/presentation/screens/quiz_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../auth/presentation/screens/finger_print_screen.dart';
-import '../../../auth/presentation/screens/login_screen.dart';
 import '../../../auth/presentation/screens/user_type.dart';
 
 class SplashScreen extends StatefulWidget {

@@ -1,4 +1,6 @@
 import 'package:educationapp/features/student/presentation/screens/quiz_screen.dart';
+import 'package:educationapp/features/student/presentation/screens/quizzes_list_screen.dart';
+import 'package:educationapp/features/student/presentation/screens/score_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart'; // Add this import statement
 import 'package:flutter_screenutil/flutter_screenutil.dart';
