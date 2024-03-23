@@ -1,11 +1,11 @@
-import 'package:educationapp/core/utils/app_style.dart';
-import 'package:educationapp/features/student/presentation/screens/widgets/custom_container_decoration.dart';
 import 'package:educationapp/features/student/presentation/screens/widgets/score_header.dart';
+import 'package:educationapp/features/student/presentation/screens/widgets/show_score.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class ScoreBody extends StatelessWidget {
-  const ScoreBody({super.key});
+  const ScoreBody({super.key, required this.studentScore, required this.totalScore});
+  final int studentScore , totalScore ;
 
 
 
@@ -19,19 +19,10 @@ class ScoreBody extends StatelessWidget {
           const Gap(50),
           const ScoreHeader(),
           const Gap(150),
-          CustomContainerDecoration(
-            child: Column(
-              children: [
-                const Gap(30),
-                Text('Student Name', style: AppStyle.semiBold24.copyWith(color: Colors.black)),
-                const Gap(20),
-                Text('2/3', style: AppStyle.semiBold24.copyWith(color: Colors.black)),
-                const Gap(30),
-              ],
-            ),
-          )
+          ShowScore(studentScore: studentScore, totalScore: totalScore)
         ],
       ),
     );
   }
 }
+
